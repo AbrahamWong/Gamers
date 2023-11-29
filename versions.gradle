@@ -30,4 +30,5 @@ ext.versions = [
         navigation_version              : "2.7.5",
         srl_version                     : "1.2.0-alpha01",
         shimmer_version                 : "0.5.0",
+        leakcanary_version              : "2.10",
 ]

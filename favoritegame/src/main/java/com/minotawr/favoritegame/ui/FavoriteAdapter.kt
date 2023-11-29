@@ -2,7 +2,6 @@ package com.minotawr.favoritegame.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.minotawr.favoritegame.databinding.AdapterFavoriteBinding
@@ -13,22 +12,6 @@ class FavoriteAdapter: RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>(
     private val list = mutableListOf<Game>()
 
     var delegate: FavoriteListDelegate? = null
-
-    class GameDiffCallback(private val oldList: List<Game>, private val newList: List<Game>): DiffUtil.Callback() {
-        override fun getOldListSize() = oldList.size
-
-        override fun getNewListSize() = newList.size
-
-        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int) =
-            oldList[oldItemPosition].id == newList[newItemPosition].id
-
-        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-            val oldItem = oldList[oldItemPosition]
-            val newItem = newList[newItemPosition]
-
-            return oldItem == newItem
-        }
-    }
 
     class FavoriteViewHolder(private val binding: AdapterFavoriteBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Game) {
@@ -56,13 +39,12 @@ class FavoriteAdapter: RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>(
     }
 
     fun setList(data: List<Game>) {
-        val diffCallback = GameDiffCallback(list, data)
-        val diffResult = DiffUtil.calculateDiff(diffCallback)
-
+        val currentSize = list.size
         list.clear()
-        list.addAll(data)
+        notifyItemRangeRemoved(0, currentSize)
 
-        diffResult.dispatchUpdatesTo(this)
+        list.addAll(data)
+        notifyItemRangeInserted(0, data.size)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
