@@ -18,23 +18,33 @@
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/skeleton"
-            app:shimmer_auto_start="true"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:shimmer_auto_start="true">
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
+
                 <include layout="@layout/skeleton_main" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -46,11 +56,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/dimen_16dp"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:clickable="true"
+            android:contentDescription="@string/content_description_floating_action_button_favorite"
             android:focusable="true"
             android:src="@drawable/ic_favorite"
             app:fabSize="normal"
-            android:contentDescription="@string/content_description_floating_action_button_favorite" />
+            app:tint="@android:color/white" />
 
     </FrameLayout>
 

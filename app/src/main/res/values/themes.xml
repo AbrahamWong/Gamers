@@ -4,10 +4,12 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="colorPrimary">@color/colorPrimary80</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
         <item name="colorOnPrimary">@android:color/white</item>
 
-        <item name="colorSecondary">@color/colorSecondary60</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
     </style>
 
     <style name="Theme.Gamers" parent="Base.Theme.Gamers" />
