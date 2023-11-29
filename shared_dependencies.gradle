@@ -1,0 +1,55 @@
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // Default
+    implementation "androidx.core:core-ktx:$versions.core_version"
+    implementation "androidx.appcompat:appcompat:$versions.appcompat_version"
+    implementation "com.google.android.material:material:$versions.material_version"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraint_version"
+    testImplementation "junit:junit:$versions.junit_unit_version"
+    androidTestImplementation "androidx.test.ext:junit:$versions.junit_impl_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espresso_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigation_version"
+
+    // Koin
+    implementation "io.insert-koin:koin-android:$versions.koin_version"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$versions.lifecycle_version"
+
+    implementation "com.github.bumptech.glide:glide:$versions.glide_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$versions.srl_version"
+    implementation "com.facebook.shimmer:shimmer:$versions.shimmer_version"
+}

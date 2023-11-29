@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.minotawr.gamers.ui.detail.GameDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dimen_24dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/skeleton_guideline_one_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/skeleton_guideline_two_third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.67" />
+
+        <ImageView
+            android:id="@+id/skeleton_iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@android:color/darker_gray"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_title"
+            style="@style/H1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_12dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_iv_background" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_description"
+            style="@style/B1"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_tv_title"
+            app:layout_constraintStart_toStartOf="@id/skeleton_tv_title"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_title" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_information_label"
+            style="@style/H1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_16dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_tv_title"
+            app:layout_constraintStart_toStartOf="@id/skeleton_tv_title"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_description" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_rating_label"
+            style="@style/H2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_guideline_one_third"
+            app:layout_constraintStart_toStartOf="@id/skeleton_tv_title"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_information_label" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_rating"
+            style="@style/B2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_tv_rating_label"
+            app:layout_constraintStart_toStartOf="@id/skeleton_tv_rating_label"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_rating_label" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_genres_label"
+            style="@style/H2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:layout_marginEnd="@dimen/dimen_8dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_guideline_two_third"
+            app:layout_constraintStart_toStartOf="@id/skeleton_guideline_one_third"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_information_label" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_genres"
+            style="@style/B2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_tv_genres_label"
+            app:layout_constraintStart_toStartOf="@id/skeleton_tv_genres_label"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_genres_label" />
+
+        <TextView
+            android:id="@+id/skeleton_tv_tags_label"
+            style="@style/H2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_tv_title"
+            app:layout_constraintStart_toStartOf="@id/skeleton_guideline_two_third"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_information_label" />
+
+        <TextView
+            android:id="@+id/skeleton_skeleton_tv_tags"
+            style="@style/B2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@id/skeleton_tv_tags_label"
+            app:layout_constraintStart_toStartOf="@id/skeleton_tv_tags_label"
+            app:layout_constraintTop_toBottomOf="@id/skeleton_tv_tags_label" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

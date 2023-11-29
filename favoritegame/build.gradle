@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'org.jetbrains.kotlin.android'
+}
+
+apply from: "../shared_dependencies.gradle"
+
+android {
+    namespace 'com.minotawr.favoritegame'
+
+}
+
+dependencies {
+    implementation project(":app")
+    implementation project(":core")
+}

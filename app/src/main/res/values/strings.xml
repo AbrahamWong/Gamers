@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gamers</string>
+    <string name="title_favoritegame">Favorite Game</string>
+
+    <string name="information">Information</string>
+    <string name="rating">Rating</string>
+    <string name="genres">Genres</string>
+    <string name="tags">Tags</string>
+</resources>

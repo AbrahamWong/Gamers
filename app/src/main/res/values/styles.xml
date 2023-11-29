@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Inter">
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="InterBold">
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
+    </style>
+
+    <style name="H1" parent="InterBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="H2" parent="InterBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="H3" parent="InterBold">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="H4" parent="InterBold">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="B1" parent="Inter">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="B2" parent="Inter">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="B3" parent="Inter">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+</resources>
