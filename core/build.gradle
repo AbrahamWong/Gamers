@@ -14,6 +14,7 @@ android {
 
         buildConfigField "String", "API_KEY", "\"${API_KEY}\""
         buildConfigField "String", "API_URL", "\"${API_URL}\""
+        buildConfigField "String", "DB_PASSPHRASE", "\"${DB_PASSPHRASE}\""
     }
 }
 
@@ -29,5 +30,6 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$versions.okhttp_interceptor_version"
 
-    implementation "androidx.datastore:datastore-preferences:$versions.datastore_version"
+    implementation "net.zetetic:android-database-sqlcipher:$versions.sqlcipher_version"
+    implementation "androidx.sqlite:sqlite-ktx:$versions.sqlite_version"
 }
