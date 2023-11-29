@@ -11,9 +11,9 @@
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/skeleton"
-            app:shimmer_auto_start="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:shimmer_auto_start="true">
 
             <include layout="@layout/skeleton_activity_game_detail" />
 
@@ -46,19 +46,21 @@
                 android:layout_height="300dp"
                 android:scaleType="centerCrop"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/backgrounds/scenic"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fab_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/dimen_16dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:contentDescription="@string/content_description_floating_action_button_favorite"
                 android:src="@drawable/ic_favorite"
                 app:layout_constraintBottom_toBottomOf="@id/iv_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_background"
-                android:contentDescription="@string/content_description_floating_action_button_favorite" />
+                app:tint="@android:color/white" />
 
             <TextView
                 android:id="@+id/tv_title"

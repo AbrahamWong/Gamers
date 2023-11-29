@@ -1,6 +1,5 @@
 package com.minotawr.gamers.ui.main
 
-import android.app.Activity
 import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.Toast
@@ -55,12 +54,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 getAllGames(1, true)
             }
 
-            recyclerView.addOnScrollListener(object: RecyclerView.OnScrollListener() {
+            recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
 
                     if (listLayoutManager.findLastVisibleItemPosition() == listAdapter.itemCount - 1 &&
-                        newState == RecyclerView.SCROLL_STATE_IDLE) {
+                        newState == RecyclerView.SCROLL_STATE_IDLE
+                    ) {
                         val nextPage = viewModel.page + 1
                         viewModel.page = nextPage
                         getAllGames(nextPage, false)
@@ -70,15 +70,21 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             floatingActionButton.setOnClickListener {
                 try {
-                    reloadLauncher.launch(Intent(this@MainActivity, Class.forName("com.minotawr.favoritegame.ui.FavoriteActivity")))
+                    reloadLauncher.launch(
+                        Intent(
+                            this@MainActivity,
+                            Class.forName("com.minotawr.favoritegame.ui.FavoriteActivity")
+                        )
+                    )
                 } catch (e: Exception) {
                     e.printStackTrace()
-                    Toast.makeText(this@MainActivity, "Module not available", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, "Module not available", Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
         }
 
-        listAdapter.delegate = object: MainAdapter.MainListDelegate {
+        listAdapter.delegate = object : MainListDelegate {
             override fun onItemClick(item: Game) {
                 GameDetailActivity.open(
                     this@MainActivity,
@@ -105,14 +111,17 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 is Result.Loading -> {
                     showShimmer()
                 }
+
                 is Result.Unauthorized -> {
                     hideShimmer()
                     showError(result.message)
                 }
+
                 is Result.Failed -> {
                     hideShimmer()
                     showError(result.message)
                 }
+
                 is Result.Success -> {
                     hideShimmer()
                     binding.skeleton.isVisible = false
