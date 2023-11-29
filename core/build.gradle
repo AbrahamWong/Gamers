@@ -6,10 +6,6 @@ plugins {
 
 apply from: "../shared_dependencies.gradle"
 
-Properties localProperties = new Properties()
-localProperties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-
 android {
     namespace 'com.minotawr.gamers.core'
 
