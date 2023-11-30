@@ -13,8 +13,7 @@ abstract class NetworkBoundResource<ResultType, RequestType> {
 
         val localData = getLocalData().first()
         if (shouldFetch(localData)) {
-            val response = fetchRemoteData()
-            when (response) {
+            when (val response = fetchRemoteData()) {
                 is Result.Success -> {
                     if (isValidResponse(response)) {
                         response.data?.let { saveResponse(it) }

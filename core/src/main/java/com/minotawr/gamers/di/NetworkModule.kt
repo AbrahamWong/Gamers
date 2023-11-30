@@ -20,7 +20,7 @@ val networkModule = module {
     single { get<Retrofit>().create(ApiService::class.java) }
 }
 
-fun provideConverterFactory() = GsonConverterFactory.create()
+fun provideConverterFactory(): GsonConverterFactory = GsonConverterFactory.create()
 
 fun provideHttpLoggingInterceptor() = HttpLoggingInterceptor()
     .setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -40,7 +40,7 @@ fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {
         .build()
 }
 
-fun provideRetrofit(converterFactory: GsonConverterFactory, client: OkHttpClient) =
+fun provideRetrofit(converterFactory: GsonConverterFactory, client: OkHttpClient): Retrofit =
     Retrofit.Builder()
         .baseUrl(BuildConfig.API_URL)
         .client(client)

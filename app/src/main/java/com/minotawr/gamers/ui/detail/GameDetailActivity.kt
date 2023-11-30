@@ -53,7 +53,7 @@ class GameDetailActivity : BaseActivity<ActivityGameDetailBinding>() {
         loadData()
     }
 
-    protected fun setupObserver() {
+    private fun setupObserver() {
         lifecycleScope.launch {
             viewModel.isFavorite.collect { isFavorite ->
                 changeFloatingDrawable(isFavorite)

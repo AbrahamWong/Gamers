@@ -1,10 +1,8 @@
 package com.minotawr.gamers.ui.base
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
@@ -48,7 +46,7 @@ abstract class BaseActivity<V: ViewBinding>: AppCompatActivity() {
             when (result) {
                 is Result.Loading -> {}
                 is Result.Success ->
-                    Toast.makeText(this, "${game.name} succesfully added as favorite.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "${game.name} successfully added as favorite.", Toast.LENGTH_SHORT).show()
 
                 else ->
                     Toast.makeText(this, "Save as favorite failed.", Toast.LENGTH_SHORT).show()
@@ -61,7 +59,7 @@ abstract class BaseActivity<V: ViewBinding>: AppCompatActivity() {
             when (result) {
                 is Result.Loading -> {}
                 is Result.Success ->
-                    Toast.makeText(this, "${game.name} succesfully deleted from favorite.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "${game.name} successfully deleted from favorite.", Toast.LENGTH_SHORT).show()
 
                 else ->
                     Toast.makeText(this, "Delete from favorite failed.", Toast.LENGTH_SHORT).show()

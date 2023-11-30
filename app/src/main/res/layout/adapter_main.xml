@@ -21,8 +21,8 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.7" />
 
+        <!-- ContentDescription set programmatically -->
         <ImageView
-            android:id="@+id/img_game"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
@@ -30,7 +30,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/limbo" />
+            tools:srcCompat="@raw/limbo"
+            tools:ignore="ContentDescription" />
 
         <View
             android:id="@+id/background"
@@ -67,7 +68,6 @@
             tools:text="Rated %d out of 5 stars" />
 
         <ImageView
-            android:id="@+id/img_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_12dp"
