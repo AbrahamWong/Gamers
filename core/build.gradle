@@ -12,6 +12,7 @@ android {
     defaultConfig {
         consumerProguardFiles "consumer-rules.pro"
 
+        buildConfigField "String", "HOST_NAME", "\"${HOST_NAME}\""
         buildConfigField "String", "API_KEY", "\"${API_KEY}\""
         buildConfigField "String", "API_URL", "\"${API_URL}\""
         buildConfigField "String", "DB_PASSPHRASE", "\"${DB_PASSPHRASE}\""

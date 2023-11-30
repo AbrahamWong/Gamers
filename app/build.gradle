@@ -17,6 +17,7 @@ android {
         versionName "${version_name}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
     }
 
     buildTypes {
