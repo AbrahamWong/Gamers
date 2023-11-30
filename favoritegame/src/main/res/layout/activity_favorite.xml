@@ -20,6 +20,7 @@
             android:textColor="@android:color/black" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_empty"
             style="@style/H2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -23,6 +23,7 @@
 
         <!-- ContentDescription set programmatically -->
         <ImageView
+            android:id="@+id/img_game"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
@@ -68,6 +69,7 @@
             tools:text="Rated %d out of 5 stars" />
 
         <ImageView
+            android:id="@+id/img_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dimen_12dp"

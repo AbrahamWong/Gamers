@@ -20,6 +20,7 @@
         </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clipToPadding="false"
@@ -49,6 +50,7 @@
                 tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/dimen_16dp"
@@ -131,6 +133,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_information_label" />
 
             <TextView
+                android:id="@+id/tv_genres"
                 style="@style/B2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -153,6 +156,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_information_label" />
 
             <TextView
+                android:id="@+id/tv_tags"
                 style="@style/B2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
