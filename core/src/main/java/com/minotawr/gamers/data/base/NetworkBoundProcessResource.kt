@@ -1,11 +1,8 @@
 package com.minotawr.gamers.data.base
 
-import com.minotawr.gamers.data.local.AuthLocalDataSource
 import kotlinx.coroutines.flow.flow
 
-abstract class NetworkBoundProcessResource<ResultType, RequestType>(
-    private val authLocalDataSource: AuthLocalDataSource
-) {
+abstract class NetworkBoundProcessResource<ResultType, RequestType> {
 
     private val result = flow {
         emit(Result.Loading())
@@ -21,7 +18,6 @@ abstract class NetworkBoundProcessResource<ResultType, RequestType>(
             }
 
             is Result.Unauthorized -> {
-                authLocalDataSource.logout()
                 emit(Result.Unauthorized(response.message))
             }
 

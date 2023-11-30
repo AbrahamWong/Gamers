@@ -1,23 +1,19 @@
 package com.minotawr.gamers.data.base
 
-import com.minotawr.gamers.data.local.AuthLocalDataSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.emitAll
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 
-abstract class NetworkBoundResource<ResultType, RequestType>(
-    private val authLocalDataSource: AuthLocalDataSource
-) {
+abstract class NetworkBoundResource<ResultType, RequestType> {
 
     private val result = flow {
         emit(Result.Loading())
 
         val localData = getLocalData().first()
         if (shouldFetch(localData)) {
-            val response = fetchRemoteData()
-            when (response) {
+            when (val response = fetchRemoteData()) {
                 is Result.Success -> {
                     if (isValidResponse(response)) {
                         response.data?.let { saveResponse(it) }
@@ -36,7 +32,6 @@ abstract class NetworkBoundResource<ResultType, RequestType>(
                 }
 
                 is Result.Unauthorized -> {
-                    authLocalDataSource.logout()
                     emit(Result.Unauthorized(response.message))
                 }
 

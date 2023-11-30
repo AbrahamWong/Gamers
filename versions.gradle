@@ -19,8 +19,9 @@ ext.versions = [
         retrofit_version                : "2.9.0",
         okhttp_interceptor_version      : "4.11.0",
 
-        // DataStore
-        datastore_version               : "1.0.0",
+        // Security
+        sqlcipher_version               : "4.4.0",
+        sqlite_version                  : "2.1.0",
 
         // Lifecycle
         lifecycle_version               : "2.2.0",

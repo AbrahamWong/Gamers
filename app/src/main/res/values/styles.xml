@@ -21,16 +21,6 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="H3" parent="InterBold">
-        <item name="android:textSize">12sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="H4" parent="InterBold">
-        <item name="android:textSize">10sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
 
     <style name="B1" parent="Inter">
         <item name="android:textSize">14sp</item>

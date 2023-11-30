@@ -3,4 +3,6 @@
     <color name="colorPrimary">#D2E0FB</color>
     <color name="colorPrimaryDark">#8EACCD</color>
     <color name="colorSecondary">#F9F3CC</color>
+    <color name="colorBackgroundGray">#B28F8F8F</color>
+    <color name="colorBackgroundShimmer">#E1555555</color>
 </resources>

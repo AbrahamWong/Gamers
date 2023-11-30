@@ -2,7 +2,6 @@ package com.minotawr.gamers.data
 
 import com.minotawr.gamers.data.base.NetworkBoundProcessResource
 import com.minotawr.gamers.data.base.Result
-import com.minotawr.gamers.data.local.AuthLocalDataSource
 import com.minotawr.gamers.data.local.GameLocalDataSource
 import com.minotawr.gamers.data.local.entity.GameGenreCrossRef
 import com.minotawr.gamers.data.local.entity.GameTagsCrossRef
@@ -18,15 +17,12 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 
 class GameRepository(
-    private val authLocalDataSource: AuthLocalDataSource,
     private val gameRemoteDataSource: GameRemoteDataSource,
     private val gameLocalDataSource: GameLocalDataSource,
 ) : IGameRepository {
 
     override fun getGameList(page: Int): Flow<Result<List<Game>?>> =
-        object : NetworkBoundProcessResource<List<Game>?, GameListResponse>(
-            authLocalDataSource
-        ) {
+        object : NetworkBoundProcessResource<List<Game>?, GameListResponse>() {
             override suspend fun fetchData(): Result<GameListResponse> =
                 gameRemoteDataSource.getAllGames(page)
 
@@ -102,7 +98,7 @@ class GameRepository(
     }
 
     override fun getGameDetail(id: Int) =
-        object: NetworkBoundProcessResource<Game, GameResponse>(authLocalDataSource) {
+        object: NetworkBoundProcessResource<Game, GameResponse>() {
             override suspend fun fetchData() = gameRemoteDataSource.getGameDetail(id)
 
             override suspend fun callbackResponse(remoteData: GameResponse): Game {

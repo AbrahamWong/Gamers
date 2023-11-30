@@ -46,7 +46,7 @@ class FavoriteActivity : BaseActivity<ActivityFavoriteBinding>() {
     }
 
     private fun setupListener() {
-        favoriteAdapter.delegate = object : FavoriteAdapter.FavoriteListDelegate {
+        favoriteAdapter.delegate = object : FavoriteListDelegate {
             override fun onItemClick(item: Game) {
                 GameDetailActivity.open(
                     this@FavoriteActivity,

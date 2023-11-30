@@ -91,7 +91,7 @@ object DataGameMapper {
             )
         }
 
-    fun mapGenreEntityToModel(entity: GenreEntity) =
+    private fun mapGenreEntityToModel(entity: GenreEntity) =
         entity.run {
             Genre(
                 genreId.toInt(),
@@ -113,7 +113,7 @@ object DataGameMapper {
             )
         }
 
-    fun mapGenreResponseToModel(response: GenreResponse) =
+    private fun mapGenreResponseToModel(response: GenreResponse) =
         response.run {
             Genre(
                 id = id ?: 0,
@@ -124,7 +124,7 @@ object DataGameMapper {
             )
         }
 
-    fun mapTagResponseToModel(response: TagsResponse) =
+    private fun mapTagResponseToModel(response: TagsResponse) =
         response.run {
             Tag(
                 id = id ?: 0,
@@ -136,7 +136,7 @@ object DataGameMapper {
             )
         }
 
-    fun mapTagsEntityToModel(entity: TagsEntity) =
+    private fun mapTagsEntityToModel(entity: TagsEntity) =
         entity.run {
             Tag(
                 id = tagId.toInt(),
