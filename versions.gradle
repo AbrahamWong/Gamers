@@ -20,7 +20,7 @@ ext.versions = [
         okhttp_interceptor_version      : "4.11.0",
 
         // Security
-        sqlcipher_version               : "4.4.0",
+        sqlcipher_version               : "4.5.1",
         sqlite_version                  : "2.1.0",
 
         // Lifecycle

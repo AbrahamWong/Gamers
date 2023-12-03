@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+
+    id 'com.google.devtools.ksp'
 }
 
 apply from: "../shared_dependencies.gradle"
@@ -20,12 +22,13 @@ android {
 }
 
 dependencies {
-    implementation "androidx.room:room-runtime:$versions.room_version"
-    implementation "androidx.room:room-ktx:$versions.room_version"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    kapt "androidx.room:room-compiler:$versions.room_version"
+
+    implementation "androidx.room:room-runtime:$versions.room_version"
+    implementation "androidx.room:room-ktx:$versions.room_version"
+    ksp "androidx.room:room-compiler:$versions.room_version"
 
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit_version"
