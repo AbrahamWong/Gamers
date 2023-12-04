@@ -5,7 +5,8 @@ orbs:
 
 jobs:
   build:
-    executor: android/android
+    docker:
+      - image: cimg/android:2023.11.1
     steps:
       - checkout
       - restore_cache:
@@ -35,9 +36,3 @@ jobs:
       - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: artifact-file
-
-workflows:
-    example-workflow:
-      jobs:
-        - android/build:
-            executor: docker 
