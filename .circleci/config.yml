@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/android:api-28-alpha
+      - image: cimg/android:2023.11.1
     steps:
       - checkout
       - restore_cache:
