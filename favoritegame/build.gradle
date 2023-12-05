@@ -10,6 +10,9 @@ apply from: "../shared_dependencies.gradle"
 android {
     namespace 'com.minotawr.favoritegame'
 
+    lintOptions {
+        disable "Instantiatable"
+    }
 }
 
 dependencies {
