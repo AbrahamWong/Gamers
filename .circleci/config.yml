@@ -5,6 +5,8 @@ orbs:
 
 jobs:
   build:
+    environment:
+        KOTLIN_VERSION: 1.9.0
     docker:
       - image: cimg/android:2023.11.1
     steps:
@@ -14,6 +16,10 @@ jobs:
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
+      - run:
+          name: "Android SDK Properties"
+          command: |
+            sed -i "s/kotlinVersion=*.*/kotlinVersion=$KOTLIN_VERSION/" gradle.properties
       - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
